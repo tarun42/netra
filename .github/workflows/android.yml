@@ -18,3 +18,5 @@ jobs:
 
     - name: Build apk
       run: ./gradlew assembleDebug
+    - name: Apk path name
+      run: cd build/outputs && ls
