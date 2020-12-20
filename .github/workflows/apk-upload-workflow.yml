@@ -1,6 +1,8 @@
 name: Android CI
 
-on: [push, pull_request]
+on: push
+  branches : 
+    - develop
 
 jobs:
   build:
@@ -16,7 +18,5 @@ jobs:
     - name: Build with Gradle
       run: chmod +x gradlew && ./gradlew build check
 
-    - name: Build apk
-      run: ./gradlew assembleDebug
     - name: Apk path name
       run: cd app/build/outputs/apk/debug && ls
